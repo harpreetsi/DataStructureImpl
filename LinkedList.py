@@ -164,7 +164,7 @@ class LinkedList:
 		self.reverse_print_recursion(p.next)
 		print(p.data)
 
-	#reverse a linked list using recursion - NOT WORKING
+	#reverse a linked list using recursion
 	def reverse_using_recursion(self,p):
 		if p.next == None:
 			self.head = p
@@ -200,6 +200,8 @@ mylist.add_at_the_end(10)
 # PRINT ELEMENTS OF A LINKED LIST
 # mylist.print()
 # mylist.print_recursion(mylist.head)
+# mylist.reverse_print_recursion(mylist.head)
+
 
 
 # REVERSE ELEMENTS OF A LINKED LIST
