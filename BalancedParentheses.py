@@ -2,7 +2,7 @@ from StackImplUsingArray import StackImplUsingArray
 
 class BalancedParentheses:
 	def __init__(self):
-		self.myStack = StackImplUsingArray(20)
+		self.myStack = StackImplUsingArray(100)
 
 	def AreParanthesesBalanced(self, expression):
 		for c in expression:
