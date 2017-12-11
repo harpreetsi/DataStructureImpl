@@ -5,7 +5,7 @@ class PrefixEvaluationTest(unittest.TestCase):
 
 	def test_evaluatePrefix(self):
 		expression = "-+*23*549"
-		# expression = "23+"
+		# expression = "+23"
 		prefixEvaluationObject = PrefixEvaluation()
 		self.assertEqual(prefixEvaluationObject.evaluatePrefix(expression),17)
 		# print(prefixEvaluationObject.evaluatePrefix(expression))
