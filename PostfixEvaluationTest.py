@@ -11,12 +11,12 @@ class PostfixEvaluationTest(unittest.TestCase):
 		# postfixEvaluationObject.evaluatePostfix(expression)
 
 	def test_isOperand_positive(self):
-		testData = '100'
+		testData = '100' # This should return false but returning true, fix it
 		postfixEvaluationObject = PostfixEvaluation()
 		self.assertTrue(postfixEvaluationObject.isOperand(testData))
 
-	def aaaaatest_isOperand_negative(self):
-		testData = '100'
+	def test_isOperand_negative(self):
+		testData = '100' # This should return false but returning true, fix it.
 		postfixEvaluationObject = PostfixEvaluation()
 		self.assertFalse(postfixEvaluationObject.isOperand(testData))
 
