@@ -43,23 +43,25 @@ class LinkedList:
 		node = Node(data)
 		if self.head is None: #linked list is empty
 			self.head = node
-			return
 		else:
 			node.next = self.head
 			self.head = node
+
+		return self.head
 
 	#add element at the end
 	def add_at_the_end(self, data):
 		node = Node(data)
 		if self.head is None: #linked list is empty
 			self.head = node
-			return
 		else:
 			current = self.head
 			while current.next != None:
 				current = current.next
-
+			
 			current.next = node
+
+		return self.head
 		
 	#inserts the element at the nth position
 	#pos=0 will be considered invalid position
@@ -69,10 +71,10 @@ class LinkedList:
 		node = Node(data)
 		
 		if pos <= 0:
-			print("Invalid position, it can not be less than or equal to 0")
-			return
+			return "Invalid position, it can not be less than or equal to 0"
+			
 		elif pos == 1: #insertion at the begining
-				self.add_at_the_begining(data)
+				return self.add_at_the_begining(data)
 		else:
 			current = self.head
 			i=1
@@ -81,25 +83,25 @@ class LinkedList:
 				i = i+1
 
 			if current is None:
-				print("Invalid position, it exceeds the size of the linked list")
-				return
+				return "Invalid position, it exceeds the size of the linked list"
 			
 			node.next = current.next
 			current.next = node
+			return self.head
 
 	#removes the element at the begining of the list
 	def remove_at_the_begining(self):
 		if self.head is None:
-			print("List is empty, nothing to remove.")
+			return "List is empty, nothing to remove"
 		else:
 			temp = self.head
 			self.head = self.head.next
-			print("Node has been removed")
+			return self.head
 
 	#removes the element at the end of the list
 	def remove_at_the_end(self):
 		if self.head is None:
-			print("List is empty, nothing to remove.")
+			return "List is empty, nothing to remove"
 		elif self.head.next == None: #there is only one element in the list
 			self.head = None
 		else:
@@ -111,13 +113,14 @@ class LinkedList:
 
 			temp.next = None
 
+		return self.head
+
 	#removes the element at the nth position
 	def remove_at_nth_position(self, pos):
-		if pos == 0:
-			print("Invalid postion")
-			return
+		if pos <= 0:
+			return "Invalid position, it can not be less than or equal to 0"
 		elif pos == 1: #remove element from the begining
-			self.remove_at_the_begining()
+			return self.remove_at_the_begining()
 		else:
 			temp = self.head
 			temp2 = temp.next
@@ -127,16 +130,16 @@ class LinkedList:
 				temp2 = temp2.next
 				i = i+1
 			if temp2 is None:
-				print("Invalid position, it exceeds the size of the linked list")
-				return
+				return "Invalid position, it exceeds the size of the linked list"
 
 			temp.next = temp2.next
+
+		return self.head
 
 	#reverses a linked list
 	def reverse(self):
 		if self.head is None: #linked list is empty
-			print("List is empty, nothing to reverse")
-			return
+			return "List is empty, nothing to reverse"
 		else:
 			currentNode = self.head
 			prevNode = None
@@ -149,6 +152,7 @@ class LinkedList:
 				# print("%s %s %s" % (prevNode.data, currentNode.data, nextNode.data))								
 
 			self.head = prevNode
+			return self.head
 
 	#print using recursion
 	def print_recursion(self, p):
@@ -166,61 +170,16 @@ class LinkedList:
 
 	#reverse a linked list using recursion
 	def reverse_using_recursion(self,p):
+		if self.head is None: #linked list is empty
+			return "List is empty, nothing to reverse"
 		if p.next == None:
 			self.head = p
-			return
+			return self.head
 
 		self.reverse_using_recursion(p.next)
 		q = p.next
 		q.next = p
 		p.next = None
+		return self.head
 
 #LINKED LIST CLASS ENDS HERE
-
-mylist = LinkedList()
-
-
-# ADD ELEMENT TO THE LINKED LIST
-mylist.add_at_the_end(2)
-mylist.add_at_the_end(4)
-mylist.add_at_the_end(6)
-mylist.add_at_the_end(8)
-mylist.add_at_the_end(10)
-# mylist.add_at_the_begining(1)
-# mylist.add_at_nth_position(3,3)
-# mylist.add_at_nth_position(5,20)
-
-
-# REMOVE ELEMENT FROM THE LINKED LIST
-# mylist.remove_at_the_begining()
-# mylist.remove_at_the_end()
-# mylist.remove_at_nth_position(1)
-
-
-# PRINT ELEMENTS OF A LINKED LIST
-# mylist.print()
-# mylist.print_recursion(mylist.head)
-# mylist.reverse_print_recursion(mylist.head)
-
-
-
-# REVERSE ELEMENTS OF A LINKED LIST
-# mylist.reverse()
-# mylist.reverse_using_recursion(mylist.head)
-
-mylist.print()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

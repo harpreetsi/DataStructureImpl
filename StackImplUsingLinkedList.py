@@ -39,47 +39,21 @@ class StackImplUsingLinkedList:
 
 	def pop(self):
 		if self.top is None:
-			print("Stack is empty, nothing to pop!!!")
-			return
+			return "Stack empty"
 
-		temp = self.top
+		element = self.top
 		self.top = self.top.next
+		return element
 
 	def topElement(self):
 		if self.top is None:
-			print("Stack is empty!!!")
-			return
-		print(self.top.data)
+			return "Stack empty"
+			
+		return self.top.data
 
 	def isEmpty(self):
 		if self.top is None:
-			print("Stack is empty!!!")
+			return True
 		else:
-			print("Stack is not empty!!!")
-
-# Stack class ends here
-
-myStack = StackImplUsingLinkedList()
-
-myStack.push(10)
-myStack.push(20)
-myStack.push(30)
-
-# myStack.pop()
-# myStack.pop()
-# myStack.pop()
-# myStack.pop()
-
-# 
-# myStack.topElement()
-#
-myStack.isEmpty()
-
-
-myStack.print()
-
-
-
-
-
+			return False
 

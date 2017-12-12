@@ -3,7 +3,6 @@ class StackImplUsingArray:
 		self.list = [i for i in range(size)]
 		self.top = -1
 
-
 	def push(self, data):
 		if self.top == len(self.list) - 1:
 			return "Stack full"
