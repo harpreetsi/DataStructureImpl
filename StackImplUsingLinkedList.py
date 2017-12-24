@@ -18,7 +18,7 @@ class Node:
 # Node class ends here
 
 # Stack class starts here
-class StackImplUsingLinkedList:
+class Stack:
 	def __init__(self):
 		self.top = None
 

@@ -1,7 +1,7 @@
-from StackImplUsingArray import StackImplUsingArray
+from StackImplUsingArray import Stack
 class PostfixEvaluation:
 	def __init__(self):
-		self.myStack = StackImplUsingArray(100) # define stack of 100 elements
+		self.myStack = Stack(100) # define stack of 100 elements
 
 	def evaluatePostfix(self, expression):
 

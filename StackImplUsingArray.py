@@ -1,4 +1,4 @@
-class StackImplUsingArray:
+class Stack:
 	def __init__(self,size):
 		self.list = [i for i in range(size)]
 		self.top = -1

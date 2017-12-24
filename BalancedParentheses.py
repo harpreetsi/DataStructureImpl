@@ -1,8 +1,8 @@
-from StackImplUsingArray import StackImplUsingArray
+from StackImplUsingArray import Stack
 
 class BalancedParentheses:
 	def __init__(self):
-		self.myStack = StackImplUsingArray(100)
+		self.myStack = Stack(100)
 
 	def AreParanthesesBalanced(self, expression):
 		for c in expression:
