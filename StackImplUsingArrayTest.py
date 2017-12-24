@@ -5,8 +5,7 @@ class TestStackImplUsingArray(unittest.TestCase):
 
 	def test_push(self):
 		myStack = StackImplUsingArray(10)
-		myStack.push(5)
-		self.assertEqual(myStack.topElement(), 5)
+		self.assertEqual(myStack.push(5), "success")
 
 	def test_stackOverflow(self):
 		myStack = StackImplUsingArray(3) # declared a stack of size 3
@@ -41,6 +40,16 @@ class TestStackImplUsingArray(unittest.TestCase):
 		myStack = StackImplUsingArray(10)
 		myStack.push(10)
 		self.assertFalse(myStack.isEmpty())
+
+	def test_print_empty_stack(self):
+		myStack = StackImplUsingArray(10)
+		myStack.print()
+
+	def test_print(self):
+		myStack = StackImplUsingArray(10)
+		myStack.push(10)
+		myStack.push(20)
+		myStack.print()
 
 
 if __name__ == '__main__':

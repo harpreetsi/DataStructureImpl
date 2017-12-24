@@ -9,17 +9,18 @@ class StackImplUsingArray:
 			
 		self.top = self.top + 1
 		self.list[self.top] = data
+		return "success"
 
 	# returns top element from ther stack, returns None if stack is empty
 	def topElement(self):
-		if self.top == -1:
+		if self.isEmpty():
 			return "Stack empty"
 			
 		return self.list[self.top]
 
 	# removes the element from top of the stack and returns it, returns None if stack is empty
 	def pop(self):
-		if self.top == -1:
+		if self.isEmpty():
 			return "Stack empty"
 			
 		element = self.list[self.top]
@@ -34,7 +35,10 @@ class StackImplUsingArray:
 			return False
 
 	def print(self):
-		i=0
-		while i <= self.top:
-			print(self.list[i])
-			i = i + 1
+		if self.isEmpty():
+			print("Stack empty, nothing to print")
+		else:
+			i=0
+			while i <= self.top:
+				print(self.list[i])
+				i = i + 1
